@@ -11,19 +11,13 @@
 <!--
     pattern="^([0-9]{1,}[a-z]{1,}[A-Z]{1,}(!|@|#){1,}){8,15}$"
     -->
+
 <body>
-<? include('menu.php') ?>
+    <? include('menu.php') ?>
     <h1 class="srbno" style="width:80%;margin-left:40%">Formulaire d'inscription</h1>
     <form class="srbno" action="traitement.html" method="post">
         <table border style="width:80%;margin-left:10%">
-            <tr>
-                <td><label for="password">Mot de pass</label></td>
-                <td><input required type="password" name="" id="password" minlength="8" maxlength="15"
-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#@!&_=]).{8,15}$"></td>
-            </tr>
-            <!--
-     ^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#$%^&*_=+-]).{8,16}$
-     -->
+
             <tr>
                 <td><label for="prenom">Prénom</label></td>
                 <td><input required type="text" name="" id="prenom"></td>
@@ -34,13 +28,21 @@ pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#@!&_=]).{8,15}$"></td>
             </tr>
             <tr>
                 <td><label for="tel">Téléphone</label></td>
-                <td><input required type="tel" name="" id="tel" pattern="^(70|75|76|77|78|33)([0-9]{7}$)"></td>
+                <td>
+                    <input required type="tel" name="" id="tel" pattern="^(221|00221|\+221)?(70|75|76|77|78|33)[0-9]{7}$">
+                </td>
             </tr>
             <tr>
                 <td><label for="email">E-mail</label></td>
                 <td><input required type="email" name="" id="email"></td>
             </tr>
-
+            <tr>
+                <td><label for="password">Mot de pass</label></td>
+                <td><input required type="password" name="" id="password" minlength="8" maxlength="15" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#@!&_=]).{8,15}$"></td>
+            </tr>
+            <!--
+     ^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#$%^&*_=+-]).{8,16}$
+     -->
             <tr>
                 <td><label for="dateNaiss">Date de naissance</label></td>
                 <td><input required type="date" name="" id="dateNaiss"></td>
