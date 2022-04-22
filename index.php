@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire d'inscription</title>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"  crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <!--
     pattern="^([0-9]{1,}[a-z]{1,}[A-Z]{1,}(!|@|#){1,}){8,15}$"
@@ -19,6 +20,7 @@
         <table border style="width:80%;margin-left:10%">
 
             <tr>
+          
                 <td><label for="prenom">Prénom</label></td>
                 <td><input required type="text" name="" id="prenom"></td>
             </tr>
@@ -38,7 +40,7 @@
             </tr>
             <tr>
                 <td><label for="password">Mot de pass</label></td>
-                <td><input required type="password" name="" id="password" minlength="8" maxlength="15" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#@!&_=]).{8,15}$"></td>
+                <td><input required type="password" name="" id="password" minlength="8" maxlength="15" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#@!&_=]).{8,15}$">   <i class="fa fa-eye" aria-hidden="true" onclick="showPassword()" id="showPwd"></i><i class="fa fa-eye-slash" aria-hidden="true" onclick="hidePassword()"  id="hidePwd"></i></td>
             </tr>
             <!--
      ^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#$%^&*_=+-]).{8,16}$
@@ -109,6 +111,17 @@
     </form>
 
     <script>
+        function showPassword(){
+            document.getElementById("password").type="text";
+            document.getElementById("showPwd").style.display = 'none';
+            document.getElementById("hidePwd").style.display = 'block';
+        }
+        function hidePassword(){
+            document.getElementById("password").type="password";
+            document.getElementById("showPwd").style.display = 'block';
+            document.getElementById("hidePwd").style.display = 'none';
+
+        }
         ScrollReveal({
             reset: true
         });
